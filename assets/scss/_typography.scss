@@ -1,0 +1,21 @@
+html {
+  font-family: $font-family;
+  color: $primary-color;
+  font-size: $body-font-size;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+a {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: currentColor;
+    text-decoration: none;
+  }
+}
