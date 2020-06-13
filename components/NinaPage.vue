@@ -11,7 +11,12 @@
         </svg>
       </nuxt-link>
 
-      <slot name="heading" />
+      <h2
+        v-if="hasHeading"
+        class="h2"
+      >
+        <slot name="heading" />
+      </h2>
 
       <div class="center-content">
         <slot />
@@ -45,6 +50,10 @@ export default {
   },
 
   computed: {
+    hasHeading () {
+      return this.$slots.heading !== undefined
+    },
+
     hasBottomContent () {
       return this.$slots['bottom-content'] !== undefined
     }

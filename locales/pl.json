@@ -2,5 +2,13 @@
   "navigation": {
     "aboutMe": "o mnie",
     "contact": "kontakt"
+  },
+  "aboutMe": {
+    "title": "o mnie",
+    "description": "Lorem ipsum"
+  },
+  "contact": {
+    "title": "kontakt",
+    "contactMe": "skontakuj się ze mną"
   }
 }

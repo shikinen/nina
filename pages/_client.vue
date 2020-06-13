@@ -1,9 +1,7 @@
 <template>
   <nina-page>
     <template #heading>
-      <h2 class="h2">
-        {{ client.name }}
-      </h2>
+      {{ client.name }}
     </template>
 
     <template #bottom-content>
