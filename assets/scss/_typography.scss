@@ -9,6 +9,14 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+.h2 {
+  font-size: $medium-font-size
+}
+
+.paragraph {
+  font-size: $body-font-size;
+  line-height: 1.25;
+}
 
 a {
   &:link,

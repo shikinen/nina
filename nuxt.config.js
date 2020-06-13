@@ -1,3 +1,4 @@
+import { pageTitle } from './config'
 
 export default {
   mode: 'universal',
@@ -5,7 +6,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.NAME || '',
+    title: pageTitle,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -18,7 +19,8 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: false,
+  transition: 'fade',
   /*
   ** Global CSS
   */
@@ -39,7 +41,8 @@ export default {
   styleResources: {
     scss: [
       '@/assets/scss/_variables.scss',
-      '@/assets/scss/_mixins.scss'
+      '@/assets/scss/_mixins.scss',
+      '@/assets/scss_animations.scss'
     ]
   },
   /*
@@ -66,6 +69,17 @@ export default {
       messages: {
         en: require('./locales/en'),
         pl: require('./locales/pl')
+      }
+    },
+    parsePages: false,
+    pages: {
+      about: {
+        pl: '/o-mnie',
+        en: '/about-me'
+      },
+      contact: {
+        pl: '/kontakt',
+        en: 'contact'
       }
     }
   },

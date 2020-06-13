@@ -21,9 +21,11 @@ export default {
 
 <style lang="scss" scoped>
 .page-footer {
-  position: relative;
+  position: fixed;
+  left: 0;
+  bottom: 0;
   z-index: 99999;
-  padding-bottom: $space-xl;
+  padding: 0 $main-padding $space-xl;
 }
 
 .copy {

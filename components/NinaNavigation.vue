@@ -7,8 +7,8 @@
         class="nav-item"
       >
         <nuxt-link
-          v-if="link.path"
-          :to="link.path"
+          v-if="link.route"
+          :to="localePath(link.route)"
           class="nav-link"
         >
           {{ link.title }}
@@ -45,11 +45,11 @@ export default {
       return [
         {
           title: this.$t('navigation.aboutMe'),
-          path: 'o-mnie'
+          route: 'about'
         },
         {
           title: this.$t('navigation.contact'),
-          path: 'kontakt'
+          route: 'contact'
         },
         {
           title: 'instagram',
@@ -93,11 +93,9 @@ export default {
 
   &::after {
     position: absolute;
-    top: calc(100% + 10px);
+    top: calc(100% + 2px);
     bottom: 0;
     left: 0;
-    right: 0;
-    margin: auto;
     width: 0;
     content: '';
     color: transparent;

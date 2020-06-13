@@ -22,8 +22,6 @@ export default {
 .page-grid {
   display: flex;
   height: 100vh;
-  padding: 0 60px;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: 0 $main-padding;
 }
 </style>

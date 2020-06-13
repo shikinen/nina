@@ -1,7 +1,9 @@
 <template>
   <header class="page-header">
     <h1 class="page-heading">
-      {{ pageHeading }}
+      <nuxt-link to="/">
+        {{ pageHeading }}
+      </nuxt-link>
     </h1>
 
     <nina-navigation class="page-nav" />
@@ -64,7 +66,7 @@ $navigation-index: 9995;
   display: flex;
   align-items: center;
   width: 100%;
-  padding: $space-sm $space-md;
+  padding: $space-sm $main-padding;
   transition: all .2s ease-in-out;
 }
 
