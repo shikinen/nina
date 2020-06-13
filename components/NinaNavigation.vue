@@ -1,22 +1,35 @@
 <template>
-  <header class="page-header">
-    <h1 class="page-heading">
-      {{ pageHeading }}
-    </h1>
-
-    <nina-navigation class="page-nav" />
-  </header>
+  <nav class="nav">
+    <ul>
+      <li
+        v-for="link in navLinks"
+        :key="link.title"
+        class="nav-item"
+      >
+        <nuxt-link
+          v-if="link.path"
+          :to="link.path"
+          class="nav-link"
+        >
+          {{ link.title }}
+        </nuxt-link>
+        <a
+          v-else
+          :href="link.link"
+          class="nav-link"
+        >
+          {{ link.title }}
+        </a>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
-import NinaNavigation from '~/components/NinaNavigation'
+import { instagramUrl } from '~/config'
 
 export default {
-  name: 'NinaHeader',
-
-  components: {
-    NinaNavigation
-  },
+  name: 'NinaNavigation',
 
   data: () => ({
     navLinks: [
@@ -30,30 +43,14 @@ export default {
       },
       {
         title: 'instagram',
-        link: 'https://instagram.com'
+        link: instagramUrl
       }
     ]
-  }),
-
-  computed: {
-    pageHeading () {
-      return process.env.NAME
-    }
-  }
+  })
 }
 </script>
 
 <style lang="scss" scoped>
-.page-header {
-  display: flex;
-  align-items: center;
-  padding: $space-sm 0;
-}
-
-.page-nav {
-  margin-left: auto;
-}
-
 .nav-item {
   display: inline-block;
 
@@ -89,9 +86,5 @@ export default {
       width: 100%;
     }
   }
-}
-
-.page-heading {
-  font-size: $big-font-size;
 }
 </style>

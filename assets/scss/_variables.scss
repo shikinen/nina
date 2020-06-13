@@ -1,4 +1,8 @@
-$space-xl: 80px;
+
+$space-sm: 20px;
+$space-md: $space-sm * 2;
+$space-lg: $space-sm * 3;
+$space-xl: $space-sm * 4;
 
 $font-family: 'Neue Montreal', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
 Roboto, 'Helvetica Neue', Arial, sans-serif;
