@@ -5,17 +5,23 @@
     </h1>
 
     <nina-navigation class="page-nav" />
+    <nina-burger class="page-burger" />
+    <nina-mobile-menu class="page-mobile-menu" />
   </header>
 </template>
 
 <script>
 import NinaNavigation from '~/components/NinaNavigation'
+import NinaBurger from '~/components/NinaBurger'
+import NinaMobileMenu from '~/components/NinaMobileMenu'
 
 export default {
   name: 'NinaHeader',
 
   components: {
-    NinaNavigation
+    NinaNavigation,
+    NinaBurger,
+    NinaMobileMenu
   },
 
   data: () => ({
@@ -44,54 +50,46 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$header-index: 9999;
+$burger-index: 9998;
+$heading-index: 9997;
+$mobile-menu-index: 9996;
+$navigation-index: 9995;
+
 .page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $header-index;
   display: flex;
   align-items: center;
-  padding: $space-sm 0;
+  width: 100%;
+  padding: $space-sm $space-md;
+  transition: all .2s ease-in-out;
 }
 
 .page-nav {
-  margin-left: auto;
-}
-
-.nav-item {
-  display: inline-block;
-
-  &:not(:first-child) {
-    margin-left: $space-md;
-  }
-}
-
-.nav-link {
   position: relative;
-
-  &,
-  &::after {
-    transition: all .2s ease-in-out;
-  }
-
-  &::after {
-    position: absolute;
-    top: calc(100% + 10px);
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 0;
-    content: '';
-    color: transparent;
-    background: $primary-color;
-    height: 1px;
-  }
-
-  &:hover {
-    &::after {
-      width: 100%;
-    }
-  }
+  z-index: $navigation-index;
+  margin-left: auto;
+  @include hide-down(md);
 }
 
 .page-heading {
+  position: relative;
+  z-index: $heading-index;
   font-size: $big-font-size;
+}
+
+.page-burger {
+  @include hide-up(md);
+  margin-left: auto;
+  position: relative;
+  z-index: $burger-index;
+}
+
+.page-mobile-menu {
+  z-index: $mobile-menu-index;
+  @include hide-up(md);
 }
 </style>

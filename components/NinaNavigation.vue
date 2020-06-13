@@ -68,10 +68,18 @@ export default {
 
 <style lang="scss" scoped>
 .nav-item {
-  display: inline-block;
+  @include media-down(sm) {
+    &:not(:last-child) {
+      margin-bottom: $space-md;
+    }
+  }
 
-  &:not(:first-child) {
-    margin-left: $space-md;
+  @include media-up(sm) {
+    display: inline-block;
+
+    &:not(:first-child) {
+      margin-left: $space-md;
+    }
   }
 }
 

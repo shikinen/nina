@@ -21,6 +21,8 @@ export default {
 
 <style lang="scss" scoped>
 .page-footer {
+  position: relative;
+  z-index: 99999;
   padding-bottom: $space-xl;
 }
 
