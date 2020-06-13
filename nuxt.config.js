@@ -53,8 +53,26 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    // Doc: https://nuxt-community.github.io/nuxt-i18n/
+    'nuxt-i18n'
   ],
+  /*
+  ** i18n module configuration
+  ** See https://nuxt-community.github.io/nuxt-i18n/
+  */
+  i18n: {
+    locales: ['en', 'pl'],
+    strategy: 'prefix_except_default',
+    defaultLocale: 'pl',
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: {
+        en: require('./locales/en'),
+        pl: require('./locales/pl')
+      }
+    }
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

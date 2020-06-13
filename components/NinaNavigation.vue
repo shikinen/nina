@@ -17,9 +17,18 @@
           v-else
           :href="link.link"
           class="nav-link"
+          target="_blank"
         >
           {{ link.title }}
         </a>
+      </li>
+      <li class="nav-item">
+        <nuxt-link
+          :to="switchLocalePath(otherLocale)"
+          class="nav-link"
+        >
+          {{ otherLocale }}
+        </nuxt-link>
       </li>
     </ul>
   </nav>
@@ -31,22 +40,29 @@ import { instagramUrl } from '~/config'
 export default {
   name: 'NinaNavigation',
 
-  data: () => ({
-    navLinks: [
-      {
-        title: 'o mnie',
-        path: 'o-mnie'
-      },
-      {
-        title: 'kontakt',
-        path: 'kontakt'
-      },
-      {
-        title: 'instagram',
-        link: instagramUrl
-      }
-    ]
-  })
+  computed: {
+    navLinks () {
+      return [
+        {
+          title: this.$t('navigation.aboutMe'),
+          path: 'o-mnie'
+        },
+        {
+          title: this.$t('navigation.contact'),
+          path: 'kontakt'
+        },
+        {
+          title: 'instagram',
+          link: instagramUrl
+        }
+      ]
+    },
+
+    otherLocale () {
+      const currentLocale = this.$i18n.locale
+      return this.$i18n.locales.find(locale => locale !== currentLocale)
+    }
+  }
 }
 </script>
 
