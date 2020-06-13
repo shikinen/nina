@@ -11,16 +11,22 @@
         {{ client.description[$i18n.locale] }}
       </p>
     </template>
+
+    <template #images>
+      <nina-slider :photos="client.photos" />
+    </template>
   </nina-page>
 </template>
 
 <script>
 import NinaPage from '~/components/NinaPage'
+import NinaSlider from '~/components/NinaSlider'
 import { clients } from '~/config'
 
 export default {
   components: {
-    NinaPage
+    NinaPage,
+    NinaSlider
   },
 
   validate ({ params }) {

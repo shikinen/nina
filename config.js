@@ -14,7 +14,13 @@ export const clients = {
         description: {
           pl: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           en: 'enLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-        }
+        },
+        photos: [
+          'img/clients/mako/main.png',
+          'img/clients/mako/2.png',
+          'img/clients/mako/3.png',
+          'img/clients/mako/4.png'
+        ]
       },
       {
         name: 'Wittchen',

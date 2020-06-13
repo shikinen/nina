@@ -1,6 +1,6 @@
 <template>
   <main class="main">
-    <div class="content-pane">
+    <div class="pane content-pane">
       <nuxt-link
         v-if="returnable"
         to="/"
@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <div class="images-pane">
+    <div class="pane images-pane">
       <slot name="images" />
     </div>
   </main>
@@ -59,14 +59,16 @@ export default {
   display: flex;
   margin: auto 0;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.pane {
+  display: flex;
+  height: 100%;
 }
 
 .content-pane {
-  display: flex;
   flex-direction: column;
-  height: 100%;
-  margin-right: 200px;
 }
 
 .back-link {
@@ -84,6 +86,8 @@ export default {
 
 .images-pane {
   flex: 1;
-  display: flex;
+  align-items: center;
+  max-width: 50vw;
+  margin-right: 100px;
 }
 </style>
