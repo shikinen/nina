@@ -22,6 +22,7 @@
     <template #images>
       <img
         class="main-image"
+        :alt="mainImageAlt"
         :src="currentImg"
       >
     </template>
@@ -30,7 +31,7 @@
 
 <script>
 import NinaPage from '~/components/NinaPage'
-import { mainImage, clients } from '~/config'
+import { clients } from '~/config'
 
 export default {
   components: {
@@ -39,16 +40,25 @@ export default {
 
   data: () => ({
     currentClient: '',
-    clients
+    clients,
+    pageName: process.env.NAME
   }),
 
   computed: {
     currentImg () {
-      const { currentClient } = this
-      return currentClient
-        ? `img/clients/${currentClient}/main.png`
-        : mainImage
+      return `img/clients/${this.currentClient}/main.png`
+
+    },
+    firstClient () {
+      return this.clients.fashion.list[0]?.code
+    },
+    mainImageAlt () {
+      return `${this.pageName} – ${this.currentClient}`
     }
+  },
+
+  created () {
+    this.resetCurrentClient()
   },
 
   methods: {
@@ -57,7 +67,7 @@ export default {
     },
 
     resetCurrentClient () {
-      this.currentClient = ''
+      this.currentClient = this.firstClient
     }
   }
 }

@@ -1,7 +1,7 @@
 import { pageTitle } from './config'
 
 export default {
-  mode: 'universal',
+  target: 'static',
   /*
   ** Headers of the page
   */
@@ -20,7 +20,7 @@ export default {
   ** Customize the progress-bar color
   */
   loading: false,
-  transition: 'fade',
+  pageTransition: 'fade',
   /*
   ** Global CSS
   */
