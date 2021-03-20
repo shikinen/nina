@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { pageName } from '~/config'
+
 import NinaNavigation from '~/components/NinaNavigation'
 import NinaBurger from '~/components/NinaBurger'
 import NinaMobileMenu from '~/components/NinaMobileMenu'
@@ -27,6 +29,7 @@ export default {
   },
 
   data: () => ({
+    pageHeading: pageName,
     navLinks: [
       {
         title: 'o mnie',
@@ -41,13 +44,7 @@ export default {
         link: 'https://instagram.com'
       }
     ]
-  }),
-
-  computed: {
-    pageHeading () {
-      return process.env.NAME
-    }
-  }
+  })
 }
 </script>
 

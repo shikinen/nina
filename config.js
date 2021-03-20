@@ -1,3 +1,5 @@
+export const pageName = 'Nina Eberhardt'
+
 export const pageTitle = 'Nina Eberhardt Photography'
 
 export const instagramUrl = 'https://www.instagram.com/eberhardt.nina/'

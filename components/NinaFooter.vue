@@ -7,13 +7,15 @@
 </template>
 
 <script>
+import { pageName } from '~/config'
+
 export default {
   name: 'NinaFooter',
 
   computed: {
     copyright () {
       const currentYear = new Date().getFullYear()
-      return `${process.env.NAME} ${currentYear}`
+      return `${pageName} ${currentYear}`
     }
   }
 }

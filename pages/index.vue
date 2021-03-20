@@ -31,7 +31,7 @@
 
 <script>
 import NinaPage from '~/components/NinaPage'
-import { clients } from '~/config'
+import { pageName, clients } from '~/config'
 
 export default {
   components: {
@@ -41,7 +41,7 @@ export default {
   data: () => ({
     currentClient: '',
     clients,
-    pageName: process.env.NAME
+    pageName
   }),
 
   computed: {
